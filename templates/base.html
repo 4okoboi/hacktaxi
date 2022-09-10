@@ -7,10 +7,33 @@
           href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
           crossorigin="anonymous">
+    <link rel="stylesheet" href="../static/styles/base.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!--    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"-->
+<!--          integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">-->
     <title>{{title}}</title>
 </head>
 <body>
 <header>
+    <div class="logo">
+        <img src="../static/img/logo.png" alt="" class="logo_img">
+    </div>
+    <div class="navbar">
+        <div class="navbar_item">
+            <a href="/"><img src="../static/img/road.png" width="33px" height="33px" alt="" class="road"></a>
+        </div>
+        <div class="navbar_item">
+            <a href=""><img src="../static/img/plus.png" width="33px" height="33px" alt="" class="plus"></a>
+        </div>
+        <div class="navbar_item">
+            <a href="#"><img src="../static/img/gear.png" width="33px" height="33px" alt="" class="gear"></a>
+        </div>
+    </div>
+    <div class="log_in">
+        <p><a href="#">Создать аккаунт</a></p>
+        <p><a href="#">Войти</a></p>
+    </div>
 </header>
 <!-- Begin page content -->
 <main role="main" class="container">

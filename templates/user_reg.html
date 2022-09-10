@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="reg_form">
+    <h1>Регистрация пользователя</h1>
+    <form action="" method="post" novalidate>
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.username.label }}<br>
+            {{ form.username(class="form-control") }}<br>
+            {% for error in form.username.errors %}
+        <div class="alert alert-danger" role="alert">
+            {{ error }}
+        </div>
+        {% endfor %}
+        </p>
+        <p>
+            {{ form.password.label }}<br>
+            {{ form.password(class="form-control") }}<br>
+            {% for error in form.password.errors %}
+        <div class="alert alert-danger" role="alert">
+            {{ error }}
+        </div>
+        {% endfor %}
+        </p>
+        <p>
+            {{ form.name.label }}<br>
+            {{ form.name(class="form-control") }}<br>
+            {% for error in form.name.errors %}
+        <div class="alert alert-danger" role="alert">
+            {{ error }}
+        </div>
+        {% endfor %}
+        </p>
+
+        <p>
+            {{ form.lastname.label }}<br>
+            {{ form.lastname(class="form-control") }}<br>
+            {% for error in form.lastname.errors %}
+        <div class="alert alert-danger" role="alert">
+            {{ error }}
+        </div>
+        {% endfor %}
+        </p>
+
+
+        <p>
+            {{ form.phone_number.label }}<br>
+            {{ form.phone_number(class="form-control") }}<br>
+            {% for error in form.phone_number.errors %}
+        <div class="alert alert-danger" role="alert">
+            {{ error }}
+        </div>
+        {% endfor %}
+        </p>
+        <p>{{ form.account_type }}</p><br>
+
+
+        <p>{{ form.submit(type="submit", class="btn btn-primary") }}</p>
+    </form>
+    {% endblock %}
+</div>
