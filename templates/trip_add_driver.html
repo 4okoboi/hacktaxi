@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="reg_form">
+    <h1>Заявка на поездку</h1>
+    <form action="" method="post" novalidate>
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.deadline_date.label }}<br>
+            {{ form.deadline_date(class="form-control") }}<br>
+            {% for error in form.deadline_date.errors %}
+        <div class="alert alert-danger" role="alert">
+            {{ error }}
+        </div>
+        {% endfor %}
+        </p>
+        <p>
+            {{ form.deadline_time.label }}<br>
+            {{ form.deadline_time(class="form-control") }}<br>
+            {% for error in form.deadline_time.errors %}
+        <div class="alert alert-danger" role="alert">
+            {{ error }}
+        </div>
+        {% endfor %}
+        </p>
+        <p>
+            {{ form.from_place.label }}<br>
+            {{ form.from_place(class="form-control") }}<br>
+            {% for error in form.from_place.errors %}
+        <div class="alert alert-danger" role="alert">
+            {{ error }}
+        </div>
+        {% endfor %}
+        </p>
+
+        <p>
+            {{ form.to_place.label }}<br>
+            {{ form.to_place(class="form-control") }}<br>
+            {% for error in form.to_place.errors %}
+        <div class="alert alert-danger" role="alert">
+            {{ error }}
+        </div>
+        {% endfor %}
+        </p>
+
+
+        <p>
+            {{ form.car_name.label }}<br>
+            {{ form.car_name(class="form-control") }}<br>
+            {% for error in form.car_name.errors %}
+        <div class="alert alert-danger" role="alert">
+            {{ error }}
+        </div>
+        {% endfor %}
+        </p>
+
+        <p>
+            {{ form.more.label }}<br>
+            {{ form.more(class="form-control") }}<br>
+            {% for error in form.more.errors %}
+        <div class="alert alert-danger" role="alert">
+            {{ error }}
+        </div>
+        {% endfor %}
+        </p>
+        <p>{{ form.submit(type="submit", class="btn btn-primary") }}</p>
+    </form>
+    {% endblock %}
+</div>

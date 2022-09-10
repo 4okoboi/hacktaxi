@@ -24,16 +24,22 @@
             <a href="/"><img src="../static/img/road.png" width="33px" height="33px" alt="" class="road"></a>
         </div>
         <div class="navbar_item">
-            <a href=""><img src="../static/img/plus.png" width="33px" height="33px" alt="" class="plus"></a>
+            <a href="/add_trip"><img src="../static/img/plus.png" width="33px" height="33px" alt="" class="plus"></a>
         </div>
         <div class="navbar_item">
             <a href="#"><img src="../static/img/gear.png" width="33px" height="33px" alt="" class="gear"></a>
         </div>
     </div>
-    <div class="log_in">
-        <p><a href="#">Создать аккаунт</a></p>
-        <p><a href="#">Войти</a></p>
+    {% if USER_FLAG or DRIVER_FLAG %}
+    <div>
+        <p><a href="/account">{{ LOGIN }}</a></p>
     </div>
+    {% else %}
+    <div class="log_in">
+        <p><a href="/user_reg">Создать аккаунт</a></p>
+        <p><a href="/auth">Войти</a></p>
+    </div>
+    {% endif %}
 </header>
 <!-- Begin page content -->
 <main role="main" class="container">

@@ -9,21 +9,18 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = 'hacktaxi_secret_key'
 ADMIN_FLAG = False
 USER_FLAG = False
-DRIVER_FLAG = False
-LOGIN = {'id': '',
-         'name': '',
-         'login': '',
-         'number': ''}
+DRIVER_FLAG = True
+LOGIN = {'id': 'l;kfsadl;',
+         'name': 'l;,dfsal;,',
+         'login': 'lf;a,sd',
+         'number': 'l;fdsa'}
 GoogleMaps(app)
 
 
 @app.route('/')
 @app.route('/main')
 def main():
-    if USER_FLAG:
-        return 'privet' + LOGIN
-    else:
-        return 'main'
+    return render_template('index.html')
 
 
 @app.route('/admin_page')
@@ -78,7 +75,7 @@ def user_reg():
             global USER_FLAG
             USER_FLAG = True
         except Exception as _ex:
-            print(type(_ex))
+            print(_ex)
             return render_template('user_reg.html', title='Регистрация пользователя', form=form)
         return redirect('/')
     return render_template('user_reg.html', title='Регистрация пользователя', form=form)
@@ -105,10 +102,15 @@ def add_trip():
                     'time': form.deadline_time.data,
                     'to': form.to_place.data
                     }
-            database.push(data)
-
-
-
+            try:
+                database.child('Roads').push(data)
+            except Exception as _ex:
+                print(_ex)
+                return render_template('trip_add_driver.html', form=form)
+            return redirect('/')
+        return render_template('trip_add_driver.html', form=form)
+    else:
+        pass
 
 @app.route('/about')
 def about():
