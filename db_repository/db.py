@@ -13,3 +13,6 @@ firebase = pyrebase.initialize_app(firebaseConfig)
 database = firebase.database()
 db_auth = firebase.auth()
 # storage = firebase.storage()
+# for i in database.child('Users').child('WAHG1aibNpWfXMyCztAjPVbO7qn2').get().each():
+#     print(i.val())
+

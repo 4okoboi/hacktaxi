@@ -43,6 +43,27 @@
         {% endfor %}
         </p>
 
+        <p>
+            {{ form.patronymic.label }}<br>
+            {{ form.patronymic(class="form-control") }}<br>
+            {% for error in form.patronymic.errors %}
+        <div class="alert alert-danger" role="alert">
+            {{ error }}
+        </div>
+        {% endfor %}
+        </p>
+
+
+        <p>
+            {{ form.date_of_birth.label }}<br>
+            {{ form.date_of_birth(class="form-control") }}<br>
+            {% for error in form.date_of_birth.errors %}
+        <div class="alert alert-danger" role="alert">
+            {{ error }}
+        </div>
+        {% endfor %}
+        </p>
+
 
         <p>
             {{ form.phone_number.label }}<br>
@@ -53,7 +74,6 @@
         </div>
         {% endfor %}
         </p>
-        <p>{{ form.account_type }}</p><br>
 
 
         <p>{{ form.submit(type="submit", class="btn btn-primary") }}</p>

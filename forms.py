@@ -20,11 +20,9 @@ class UserRegForm(FlaskForm):
     password = StringField('Пароль', validators=[DataRequired()], id='password')
     name = StringField('Имя', validators=[DataRequired()], id='name')
     lastname = StringField('Фамилия', validators=[DataRequired()], id='lastname')
-    # date_of_birth = DateField('Дата рождения в формате ДД.ММ.ГГГГ', validators=[DataRequired()], id='date_of_birth',
-    #                           format='%m/%d/%Y')
+    date_of_birth = StringField('Дата рождения в формате ДД.ММ.ГГГГ', validators=[DataRequired()], id='date_of_birth')
+    patronymic = StringField('Отчество', validators=[DataRequired()], id='patronymic')
     phone_number = StringField('Номер телефона', validators=[DataRequired()], id='phone_number')
-    account_type = RadioField('Label', choices=[(1, 'Водитель'), (2, 'Пользователь')], default=1,
-                              validators=[DataRequired()])
     submit = SubmitField('Зарегистрироваться')
 
 
